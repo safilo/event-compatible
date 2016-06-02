@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>跨流览器事件处理程序</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    	body {
+    		width:100%;
+    		height:1000px;
+    		background:lightblue;
+    	}
+    </style>
+
+<body>
+    <script text="javascript" src="eventUtils.js"></script>
+    <script text="javascript">
+    var body = document.body;
+    function fn1() {
+        console.log(1);
+    }
+
+    function fn2() {
+        console.log(2);
+    }
+
+    function fn3() {
+        console.log(3);
+    }
+
+    function fn4() {
+        console.log(4);
+    }
+
+    function fn5() {
+        console.log(5);
+    }
+    eventUtils.addHandler(body,'mouseleave',fn2);
+    eventUtils.addHandler(body,'click',fn5);
+    eventUtils.addHandler(body,'click',fn5);
+    eventUtils.addHandler(body,'click',fn5);
+    eventUtils.addHandler(window,'scroll',fn5);
+    eventUtils.removeHandler(window,'scroll',fn5);
+    </script>
+</body>
+
+</html>
