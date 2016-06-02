@@ -13,7 +13,7 @@ Function.prototype.myBind = function myBind(context) {
     var outerArg = Array.prototype.slice.call(arguments, 1);
     return function() {
         var innerArg = Array.prototype.slice.call(arguments, 0);
-        _this.apply(context, outerArg.concat(innerArg));
+        _this.apply(context);
     };
 };
 
@@ -41,7 +41,7 @@ var eventUtils = {
             tempFn.photo = handler;
             ary.push(tempFn);
 
-            element.attachEvent("on" + type, handler);
+            element.attachEvent("on" + type, tempFn);
         } else {
             element["on" + type] = handler;
         }
@@ -54,7 +54,7 @@ var eventUtils = {
             if (ary) {
                 for (var i = 0, len = ary.length; i < len; i++) {
                     if (ary[i].photo === handler) {
-                        element.dettachEvent("on" + type, handler);
+                        element.dettachEvent("on" + type, tempFn);
                         ary.splice(i, 1);
                         break;
                     }
