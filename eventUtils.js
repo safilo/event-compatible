@@ -17,7 +17,7 @@ Function.prototype.myBind = function myBind(context) {
     };
 };
 
-var eventUtils = 
+var eventUtils = {
     /*
      * bind：DOM2 event binding, compatible with all browsers, solved the problem of THIS and duplication
      * @param curEle [object] ->Elements to be operated at
