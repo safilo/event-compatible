@@ -1,8 +1,8 @@
 /**
- * 跨浏览器事件处理程序
- * @authors safilo (you@example.org)
+ * event compatible
+ * @authors safilo (wulinqing@hotmail.com)
  * @date    2016-06-02 20:20:28
- * @version $Id$
+ * @version 1.0.0
  */
 Function.prototype.myBind = function myBind(context) {
     if ("bind" in Function.prototype) {
