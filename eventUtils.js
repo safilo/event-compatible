@@ -6,14 +6,14 @@
  */
 Function.prototype.myBind = function myBind(context) {
     if ("bind" in Function.prototype) {
-        return _this.bind.apply(this, Array.prototype.slice.call(arguments, 0));
+        return this.bind.apply(this, Array.prototype.slice.call(arguments, 0));
     }
     //IE 6~8
     var _this = this;
     var outerArg = Array.prototype.slice.call(arguments, 1);
     return function() {
         var innerArg = Array.prototype.slice.call(arguments, 0);
-        _this.apply(context);
+        _this.apply(context,outerArg.concat(innerArg));
     };
 };
 
