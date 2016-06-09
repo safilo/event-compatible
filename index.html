@@ -17,7 +17,7 @@
     </style>
 
 <body>
-    <script text="javascript" src="eventUtils.js"></script>
+    <script text="javascript" src="event.js"></script>
     <script text="javascript">
     var body = document.body;
     function fn1() {
@@ -39,12 +39,12 @@
     function fn5() {
         console.log(5);
     }
-    eventUtils.addHandler(body,'mouseleave',fn2);
-    eventUtils.addHandler(body,'click',fn5);
-    eventUtils.addHandler(body,'click',fn5);
-    eventUtils.addHandler(body,'click',fn5);
-    eventUtils.addHandler(window,'scroll',fn5);
-    eventUtils.removeHandler(window,'scroll',fn5);
+    on(body,'mouseleave',fn2);
+    on(body,'click',fn5);
+    on(body,'click',fn5);
+    on(body,'click',fn5);
+    on(window,'scroll',fn5);
+    off(window,'scroll',fn5);
     </script>
 </body>
 
